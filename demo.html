@@ -1,0 +1,118 @@
+
+<!doctype html><!--声明文档类型:html-->
+<html><!--超文本标记语言  根目录节点标签-->
+	<head><!--头部:给浏览器看的-->
+		<meta charset="utf-8"><!--字符编码:国际编码-->
+		<!--网页三要素 标题 关键词 描述-->
+		<title>偲偲小可爱</title>
+		<meta name="description" content="描述:对网页文档的大概的介绍">
+		<!--关键词:提供给搜索引擎搜索网站使用-->
+		<meta name="keywords" content="关键词1,关键词2">
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				background-color:#000;
+				perspective:800px;/* 让子级元素在3D空间占据位置+增加透视效果 */
+				/* perspective-origin: 80% -200%; */
+			}
+			.stage{
+				position:relative;
+				width:300px;
+				height:300px;
+				margin:250px auto 0;
+				transform-style:preserve-3d;
+				transition:2s;
+				/* box-shadow:0 0 50px 0 blue inset; */
+			}
+			.stage:hover{
+				transform:rotateX(360deg) rotateY(360deg);
+			}
+			/* .stage:hover>.top{	
+				transform:translateZ(-150px) rotateX(225deg);
+			} */
+			.stage>.face{
+				position:absolute;
+				width:100%;
+				height:100%;
+				background-image:repeating-linear-gradient(rgba(255,0,0,.2) 0,rgba(255,0,0,.2) 3px,transparent 3px,transparent 60px),
+				repeating-linear-gradient(90deg,rgba(255,0,0,.2) 0,rgba(255,0,0,.2) 3px,transparent 3px,transparent 60px);
+				text-align:center;
+				line-height:300px;
+				font-size:30px;
+				transition:1s;
+			}
+			.stage>.top{
+				transform-origin:top;
+				color:#ff1493;
+				transform:translateZ(-150px) rotateX(90deg);				
+				/* transition:2s; */
+			}
+			.stage:hover>.top{
+				background-color:currentColor;
+				box-shadow:0 0 100px 0 currentColor;
+			}
+			.stage>.bottom{
+				color:#0f9;
+				transform:rotateX(-90deg)  translateZ(150px);
+			}
+			.stage:hover>.bottom{
+				background-color:currentColor;
+				box-shadow:0 0 100px 0 currentColor;
+			}
+			.stage>.left{
+				color:#3366ff;
+				transform:rotateY(-90deg) translateZ(150px);
+			}
+			.stage:hover>.left{
+				background-color:currentColor;
+				box-shadow:0 0 100px 0 currentColor;
+			}
+			.stage>.right{
+				color:#ffcc00;
+				transform:rotateY(90deg) translateZ(150px);
+			}
+			.stage:hover>.right{
+				background-color:currentColor;
+				box-shadow:0 0 100px 0 currentColor;
+			}
+			.stage>.front{
+				color:#e3891c;
+				transform:translateZ(150px);
+			}
+			.stage:hover>.front{
+				background-color:currentColor;
+				box-shadow:0 0 100px 0 currentColor;
+			}
+			.stage>.behind{
+				color:#63561d;
+				transform:rotateY(180deg) translateZ(150px);
+			}
+			.stage:hover>.behind{
+				background-color:currentColor;
+				box-shadow:0 0 100px 0 currentColor;
+			}
+			.stage p{
+				color:#ff6600;
+				font-size:50px;
+				font-weight:bold;
+				line-height:300px;
+				text-align:center;
+				text-shadow:0 0 30px #ff0066;
+			}
+		</style>
+	</head>
+	<body><!--身体 网页上可见的区域-->
+		<div class="stage">
+			<div class="face left">left</div>
+			<div class="face right">right</div>
+			<div class="face top">top</div>
+			<div class="face bottom">bottom</div>
+			<div class="face front">front</div>
+			<div class="face behind">behind</div>
+			<p>偲偲</p>
+		</div>
+	</body>
+</html>
